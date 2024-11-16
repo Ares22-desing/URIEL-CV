@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Restaurante Zebram</title>
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .hero {
+            background-image: url('https://example.com/imagen-restaurante.jpg'); /* Cambia por la URL de tu imagen */
+            background-size: cover;
+            height: 400px;
+            text-align: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+            font-weight: bold;
+        }
+        .section {
+            padding: 40px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .menu-item {
+            width: 30%;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item h3 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form-container input, .form-container select {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            width: 300px;
+        }
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+</style>
+</head>
+<body>
+ 
+    <!-- Encabezado -->
+<header>
+<h1>Restaurante Zebram</h1>
+<p>Disfruta de la mejor gastronomía en un ambiente único</p>
+</header>
+ 
+    <!-- Barra de navegación -->
+<nav>
+<a href="#about">¿Quiénes somos?</a>
+<a href="#menu">Menú</a>
+<a href="#reserve">Reserva</a>
+<a href="#gallery">Galería</a>
+</nav>
+ 
+    <!-- Imagen principal -->
+<div class="hero">
+<p>Bienvenidos a Zebram</p>
+</div>
+ 
+    <!-- Sección sobre nosotros -->
+<div id="about" class="section">
+<h2>¿Quiénes somos?</h2>
+<p>
+            En Zebram, nos dedicamos a ofrecer una experiencia gastronómica inolvidable. 
+            Nuestro restaurante se enfoca en la fusión de sabores locales e internacionales, 
+            utilizando ingredientes frescos y de alta calidad. Ven y disfruta de un ambiente acogedor, 
+            ideal para compartir momentos especiales.
+</p>
+</div>
+ 
+    <!-- Menú -->
+<div id="menu" class="section">
+<h2>Menú</h2>
+<div class="menu">
+<div class="menu-item">
+<h3>Entrantes</h3>
+<ul>
+<li>Ceviche de atún - $10</li>
+<li>Bruschetta de tomate - $6</li>
+<li>Ensalada César - $8</li>
+</ul>
+</div>
+<div class="menu-item">
+<h3>Platos principales</h3>
+<ul>
+<li>Filete mignon con puré - $20</li>
+<li>Pasta fresca con salsa pesto - $15</li>
+<li>Pescado a la parrilla con vegetales - $18</li>
+</ul>
+</div>
+<div class="menu-item">
+<h3>Postres</h3>
+<ul>
+<li>Tarta de manzana - $6</li>
+<li>Mousse de chocolate - $5</li>
+<li>Helado artesanal - $4</li>
+</ul>
+</div>
+</div>
+</div>
+ 
+    <!-- Reserva de mesa -->
+<div id="reserve" class="section">
+<h2>Reserva tu mesa</h2>
+<div class="form-container">
+<label for="name">Nombre:</label>
+<input type="text" id="name" placeholder="Tu nombre" required>
+ 
+            <label for="date">Fecha:</label>
+<input type="date" id="date" required>
+ 
+            <label for="time">Hora:</label>
+<input type="time" id="time" required>
+ 
+            <label for="people">Número de personas:</label>
+<select id="people">
+<option value="1">1 persona</option>
+<option value="2">2 personas</option>
+<option value="3">3 personas</option>
+<option value="4">4 personas</option>
+<option value="5">5 personas</option>
+<option value="6">6 personas</option>
+</select>
+ 
+            <button onclick="makeReservation()">Reservar</button>
+</div>
+</div>
+ 
+    <!-- Galería de fotos -->
+<div id="gallery" class="section">
+<h2>Galería</h2>
+<div class="gallery">
+<img src="https://example.com/foto1.jpg" alt="Foto del restaurante 1">
+<img src="https://example.com/foto2.jpg" alt="Foto del restaurante 2">
+<img src="https://example.com/foto3.jpg" alt="Foto del restaurante 3">
+</div>
+</div>
+ 
+    <!-- Pie de página -->
+<footer>
+<p>&copy; 2024 Restaurante Zebram. Todos los derechos reservados.</p>
+</footer>
+ 
+    <script>
+        function makeReservation() {
+            const name = document.getElementById('name').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            const people = document.getElementById('people').value;
+ 
+            if (name && date && time && people) {
+                alert(`¡Gracias por tu reserva, ${name}! Has reservado para ${people} persona(s) el ${date} a las ${time}.`);
+            } else {
+                alert('Por favor completa todos los campos.');
+            }
+        }
+</script>
+ 
+</body>
+</html>
